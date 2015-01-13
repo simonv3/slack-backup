@@ -22,6 +22,9 @@ SECRET_KEY = '=1kp%mj^h4r!$_2vy9@4541)=+mc*3jxmc8lj00pm$$-1$8j*('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# DEBUG shouldn't mean local
+LOCAL = False
+
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -119,7 +122,7 @@ except ImportError:
     pass
 
 
-if DEBUG == False:
+if LOCAL == False:
     DATABASES['default'] = dj_database_url.config()
     DOMAIN = "http://slackbk.herokuapp.com"
     SLACK_CLIENT_ID = os.getenv('SLACK_CLIENT_ID', '')
