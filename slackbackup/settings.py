@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '=1kp%mj^h4r!$_2vy9@4541)=+mc*3jxmc8lj00pm$$-1$8j*('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -115,16 +115,14 @@ STATICFILES_DIRS = (
 
 AUTH_USER_MODEL = 'user_profile.User'
 
-
 try:
     from settings_local import *
 except ImportError:
-
     pass
 
 
 if DEBUG == False:
-    DATABASES['default'] =  dj_database_url.config()
+    DATABASES['default'] = dj_database_url.config()
     DOMAIN = "http://slackbk.herokuapp.com"
     SLACK_CLIENT_ID = os.getenv('SLACK_CLIENT_ID', '')
     SLACK_CLIENT_SECRET =  os.getenv('SLACK_CLIENT_SECRET', '')
