@@ -124,7 +124,7 @@ except ImportError:
 
 if LOCAL == False:
     DATABASES['default'] = dj_database_url.config()
-    DOMAIN = "https://fathomless-chamber-4493.herokuapp.com/"
+    DOMAIN = "https://fathomless-chamber-4493.herokuapp.com"
     SLACK_CLIENT_ID = os.getenv('SLACK_CLIENT_ID', '')
     SLACK_CLIENT_SECRET =  os.getenv('SLACK_CLIENT_SECRET', '')
 
