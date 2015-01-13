@@ -30,8 +30,6 @@ class Team(models.Model):
 
             user.save()
 
-
-
         return User.objects.filter(slack_team_id = self.slack_id)
 
 # Create your models here.
