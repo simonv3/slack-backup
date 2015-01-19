@@ -11,6 +11,9 @@ Slack is great, it would be better if you can easily back-up all Slack chat hist
 
 If you want to test locally, you should install all modules in requirements.txt into your virtualenv. 
 
+### You can use a free hosted service here:
+
+[http://slackbk.herokuapp.com](http://slackbk.herokuapp.com)
 
 Installation in Heroku
 ----------------------
@@ -36,6 +39,10 @@ Installation in Heroku
 
     git push heroku master    
 
+### Create database schema
+
+    heroku run python manage.py migrate
+
 ### Get your Slack client_id and client_secret  
 
 [https://api.slack.com/applications](https://api.slack.com/applications)
@@ -55,6 +62,10 @@ Installation in Heroku
 
 ### Set cron job for to automatically back-up your slack history
 
+Open the scheduler
+
+    heroku addons:open scheduler
+
 [https://scheduler.heroku.com/dashboard](https://scheduler.heroku.com/dashboard)
 
 Add follow in command into your heroku schedule, set frequency to "Every 10 minutes"
@@ -66,7 +77,7 @@ Add follow in command into your heroku schedule, set frequency to "Every 10 minu
     heroku open    
 
 
-### Questions & requests
+### Don't know heroku & don't have time? I can help you to deploy.
 
     hong (at) vietnamdevelopers.com    
 
